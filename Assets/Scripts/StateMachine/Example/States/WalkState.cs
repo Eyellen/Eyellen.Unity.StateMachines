@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace StateMachines.Example
 {
     public class WalkState : State
@@ -13,7 +15,12 @@ namespace StateMachines.Example
         {
             base.Update();
 
-            _context.Rigidbody.velocity = _context.WalkSpeed * (_context.Transform.rotation * _context.Input.MovementVector);
+            Vector3 movement = new Vector3(
+                _context.WalkSpeed * _context.Input.MovementVector.x,
+                _context.Rigidbody.velocity.y,
+                _context.WalkSpeed * _context.Input.MovementVector.z);
+
+            _context.Rigidbody.velocity = _context.Transform.rotation * movement;
         }
     }
 }
