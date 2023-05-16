@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace StateMachines
+namespace StateMachines.SingleLevel
 {
     public abstract class State
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace StateMachines.Example
+namespace StateMachines.SingleLevel.Example
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PlayerInput))]

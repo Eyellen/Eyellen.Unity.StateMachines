@@ -1,4 +1,4 @@
-namespace StateMachines
+namespace StateMachines.SingleLevel
 {
     public abstract class Transition
     {

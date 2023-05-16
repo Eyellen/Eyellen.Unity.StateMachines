@@ -1,4 +1,4 @@
-namespace StateMachines.Example
+namespace StateMachines.SingleLevel.Example
 {
     public class MovementIsNotPressed : Transition
     {
