@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace StateMachines.Example
+namespace StateMachines
 {
     public class PlayerInput : MonoBehaviour
     {
