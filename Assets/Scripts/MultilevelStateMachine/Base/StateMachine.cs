@@ -1,8 +1,12 @@
+using System;
+
 namespace StateMachines.Multilevel
 {
     public abstract class StateMachine
     {
         private State _currentState;
+
+        protected abstract StateFactory StateFactory { get; }
 
         public void SetState(State newState)
         {
@@ -11,13 +15,9 @@ namespace StateMachines.Multilevel
             _currentState.EnterStates();
         }
 
-        /// <summary>
-        /// Take initialState via "new StateFactory(this).States[typeof(<![CDATA[typeOfState]]>)]".
-        /// Note that StateFactory is an abstract class so you need your own inherited implementation.
-        /// </summary>
-        public void Initialize(State initialState)
+        public void Initialize(Type initialState)
         {
-            SetState(initialState);
+            SetState(StateFactory.States[initialState]);
         }
 
         public void Update()

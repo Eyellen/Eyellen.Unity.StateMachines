@@ -7,11 +7,6 @@ namespace StateMachines.Multilevel
     {
         public Dictionary<Type, State> States = new Dictionary<Type, State>();
 
-        public StateFactory(StateMachine stateMachine)
-        {
-            InitializeStates(stateMachine, this);
-        }
-
         protected abstract void InitializeStates(StateMachine stateMachine, StateFactory stateFactory);
     }
 }
