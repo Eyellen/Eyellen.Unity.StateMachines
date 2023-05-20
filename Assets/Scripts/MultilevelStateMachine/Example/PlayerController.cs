@@ -30,17 +30,21 @@ namespace StateMachines.Multilevel.Example
         private float _skinThickness = 0.01f;
 
         [SerializeField]
+        [Tooltip("Offset for sphere area that checks if player is grounded.")]
         private float _groundedSphereOffset = 0.05f;
 
+        [field: Header("Grounded states settings.")]
         [field: SerializeField]
         public float WalkSpeed { get; private set; } = 5f;
 
         [field: SerializeField]
         public float RunSpeed { get; private set; } = 10f;
 
+        [field: Header("Jump state settings.")]
         [field: SerializeField]
         public float JumpStrength { get; private set; } = 5f;
 
+        [field: Header("Midair states settings.")]
         [field: SerializeField]
         public float MidairMovementSpeed { get; private set; } = 0.1f;
 
