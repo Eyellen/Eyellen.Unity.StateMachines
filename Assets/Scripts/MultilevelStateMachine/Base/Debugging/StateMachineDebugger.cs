@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using UnityEngine;
 
@@ -44,6 +45,9 @@ namespace StateMachines.Multilevel.Debugging
 
             if (!isStateMachineFound)
                 throw new StateMachineNotFoundException($"Script you provided does not contain StateMachine.");
+
+            if (stateMachine == null)
+                throw new NullReferenceException("Found StateMachine equals null, seems like it is not initialized yet.");
 
             return stateMachine;
         }
