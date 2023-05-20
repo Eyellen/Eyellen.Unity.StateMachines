@@ -41,6 +41,9 @@ namespace StateMachines.Multilevel.Example
         [field: SerializeField]
         public float JumpStrength { get; private set; } = 5f;
 
+        [field: SerializeField]
+        public float MidairMovementSpeed { get; private set; } = 0.1f;
+
         private int _isGroundedLayerMask;
 
         private void Awake()

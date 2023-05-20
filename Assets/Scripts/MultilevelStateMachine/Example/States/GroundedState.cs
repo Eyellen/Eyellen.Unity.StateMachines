@@ -1,4 +1,4 @@
-using System;
+using UnityEngine;
 
 namespace StateMachines.Multilevel.Example
 {
@@ -9,10 +9,10 @@ namespace StateMachines.Multilevel.Example
 
         protected override void InitializeSubState()
         {
-            if (Math.Abs(_context.Input.MovementVector.magnitude) < 0.1)
+            if (Mathf.Abs(_context.Input.MovementVector.magnitude) < 0.1)
                 SetSubState(_states[typeof(IdleState)]);
 
-            if (Math.Abs(_context.Input.MovementVector.magnitude) >= 0.1)
+            if (Mathf.Abs(_context.Input.MovementVector.magnitude) >= 0.1)
                 SetSubState(_states[typeof(WalkState)]);
         }
 

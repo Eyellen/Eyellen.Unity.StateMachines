@@ -570,9 +570,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef6c26c6935bc48bb8d334c27a35bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _debugging: 0
   _skinThickness: 0.01
   _groundedSphereOffset: 0.05
   <WalkSpeed>k__BackingField: 5
+  <RunSpeed>k__BackingField: 10
+  <JumpStrength>k__BackingField: 5
+  <MidairMovementSpeed>k__BackingField: 0.1
 --- !u!114 &1799039732
 MonoBehaviour:
   m_ObjectHideFlags: 0

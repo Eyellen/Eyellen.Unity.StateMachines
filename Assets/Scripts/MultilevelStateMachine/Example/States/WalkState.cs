@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace StateMachines.Multilevel.Example
@@ -10,7 +9,7 @@ namespace StateMachines.Multilevel.Example
 
         protected override void CheckSwitchState()
         {
-            if (Math.Abs(_context.Input.MovementVector.magnitude) < 0.1)
+            if (Mathf.Abs(_context.Input.MovementVector.magnitude) < 0.1)
                 SwitchState(_states[typeof(IdleState)]);
 
             if (_context.Input.IsSprinting)
