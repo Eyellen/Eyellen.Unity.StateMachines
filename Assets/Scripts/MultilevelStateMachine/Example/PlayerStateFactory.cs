@@ -18,6 +18,7 @@ namespace StateMachines.Multilevel.Example
             _states[typeof(JumpState)] = new JumpState(stateMachine, stateFactory, _context);
             _states[typeof(IdleState)] = new IdleState(stateMachine, stateFactory, _context);
             _states[typeof(WalkState)] = new WalkState(stateMachine, stateFactory, _context);
+            _states[typeof(RunState)] = new RunState(stateMachine, stateFactory, _context);
         }
     }
 }

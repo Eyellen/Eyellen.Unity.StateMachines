@@ -1,20 +1,19 @@
-using System;
 using UnityEngine;
 
 namespace StateMachines.Multilevel.Example
 {
-    public class WalkState : PlayerState
+    public class RunState : PlayerState
     {
-        public WalkState(StateMachine stateMachine, StateFactory stateFactory, PlayerController context)
+        public RunState(StateMachine stateMachine, StateFactory stateFactory, PlayerController context)
             : base(stateMachine, stateFactory, context) { }
 
         protected override void CheckSwitchState()
         {
-            if (Math.Abs(_context.Input.MovementVector.magnitude) < 0.1)
+            if (Mathf.Abs(_context.Input.MovementVector.magnitude) < 0.1)
                 SwitchState(_states[typeof(IdleState)]);
 
-            if (_context.Input.IsSprinting)
-                SwitchState(_states[typeof(RunState)]);
+            if (!_context.Input.IsSprinting)
+                SwitchState(_states[typeof(WalkState)]);
         }
 
         protected override void Update()
@@ -22,7 +21,7 @@ namespace StateMachines.Multilevel.Example
             Vector3 movement = new Vector3(
                 _context.Input.MovementVector.x, _context.Rigidbody.velocity.y, _context.Input.MovementVector.z);
 
-            _context.Rigidbody.velocity = _context.Transform.rotation * movement * _context.WalkSpeed;
+            _context.Rigidbody.velocity = _context.Transform.rotation * movement * _context.RunSpeed;
         }
     }
 }

@@ -7,6 +7,11 @@ namespace StateMachines.Multilevel.Example
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerController : MonoBehaviour
     {
+#if UNITY_EDITOR
+        [SerializeField]
+        private bool _debugging = false;
+#endif
+
         private PlayerStateMachine _stateMachine;
 
         [field: HideInInspector]
@@ -29,6 +34,9 @@ namespace StateMachines.Multilevel.Example
 
         [field: SerializeField]
         public float WalkSpeed { get; private set; } = 5f;
+
+        [field: SerializeField]
+        public float RunSpeed { get; private set; } = 10f;
 
         [field: SerializeField]
         public float JumpStrength { get; private set; } = 5f;
@@ -60,15 +68,20 @@ namespace StateMachines.Multilevel.Example
             return Physics.CheckSphere(position, CapsuleCollider.radius - _skinThickness, _isGroundedLayerMask);
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
+            if (!_debugging)
+                return;
+
             if (Transform != null && CapsuleCollider != null)
             {
                 Vector3 position = Transform.position + (CapsuleCollider.center -
-                Vector3.up * (CapsuleCollider.height / 2 - CapsuleCollider.radius + _groundedSphereOffset));
+                    Vector3.up * (CapsuleCollider.height / 2 - CapsuleCollider.radius + _groundedSphereOffset));
 
                 Gizmos.DrawWireSphere(position, CapsuleCollider.radius - _skinThickness);
             }
         }
+#endif
     }
 }
