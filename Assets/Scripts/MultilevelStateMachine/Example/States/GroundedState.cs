@@ -20,6 +20,9 @@ namespace StateMachines.Multilevel.Example
         {
             if (!_context.IsGrounded())
                 SwitchState(_states[typeof(MidairState)]);
+
+            if (_context.Input.IsJumpPressed)
+                SwitchState(_states[typeof(JumpState)]);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace StateMachines.Multilevel.Example
         {
             _states[typeof(GroundedState)] = new GroundedState(stateMachine, stateFactory, _context);
             _states[typeof(MidairState)] = new MidairState(stateMachine, stateFactory, _context);
+            _states[typeof(JumpState)] = new JumpState(stateMachine, stateFactory, _context);
             _states[typeof(IdleState)] = new IdleState(stateMachine, stateFactory, _context);
             _states[typeof(WalkState)] = new WalkState(stateMachine, stateFactory, _context);
         }
