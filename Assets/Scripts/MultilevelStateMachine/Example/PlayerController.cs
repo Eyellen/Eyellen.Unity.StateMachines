@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace StateMachines.Multilevel.Example
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PlayerInput))]

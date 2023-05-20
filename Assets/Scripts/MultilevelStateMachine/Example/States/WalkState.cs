@@ -18,10 +18,9 @@ namespace StateMachines.Multilevel.Example
 
         protected override void FixedUpdate()
         {
-            Vector3 movement = new Vector3(
-                _context.Input.MovementVector.x, _context.Rigidbody.velocity.y, _context.Input.MovementVector.z);
+            Vector3 movement = _context.Transform.rotation * _context.Input.MovementVector * _context.WalkSpeed;
 
-            _context.Rigidbody.velocity = _context.Transform.rotation * movement * _context.WalkSpeed;
+            _context.Rigidbody.velocity = new Vector3(movement.x, _context.Rigidbody.velocity.y, movement.z);
         }
     }
 }
