@@ -74,7 +74,7 @@ namespace StateMachines.Multilevel
         {
             FixedUpdate();
 
-            _currentSubState?.FixedUpdate();
+            _currentSubState?.FixedUpdateStates();
         }
 
         protected virtual void InitializeSubState() { }
