@@ -24,5 +24,10 @@ namespace StateMachines.Multilevel
         {
             _currentState.UpdateStates();
         }
+
+        public void FixedUpdate()
+        {
+            _currentState.FixedUpdateStates();
+        }
     }
 }

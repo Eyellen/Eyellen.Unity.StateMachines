@@ -70,6 +70,13 @@ namespace StateMachines.Multilevel
             _currentSubState?.UpdateStates();
         }
 
+        public void FixedUpdateStates()
+        {
+            FixedUpdate();
+
+            _currentSubState?.FixedUpdate();
+        }
+
         protected virtual void InitializeSubState() { }
 
         protected virtual void CheckSwitchState() { }
@@ -79,5 +86,7 @@ namespace StateMachines.Multilevel
         protected virtual void Exit() { }
 
         protected virtual void Update() { }
+
+        protected virtual void FixedUpdate() { }
     }
 }

@@ -16,7 +16,7 @@ namespace StateMachines.Multilevel.Example
                 SwitchState(_states[typeof(RunState)]);
         }
 
-        protected override void Update()
+        protected override void FixedUpdate()
         {
             Vector3 movement = new Vector3(
                 _context.Input.MovementVector.x, _context.Rigidbody.velocity.y, _context.Input.MovementVector.z);

@@ -67,6 +67,11 @@ namespace StateMachines.Multilevel.Example
             _stateMachine.Update();
         }
 
+        private void FixedUpdate()
+        {
+            _stateMachine.FixedUpdate();
+        }
+
         public bool IsGrounded()
         {
             Vector3 position = Transform.position + (CapsuleCollider.center -
