@@ -7,10 +7,7 @@ namespace StateMachines.Multilevel.Example
         private PlayerController _context;
 
         private StateFactory _stateFactory;
-        protected override StateFactory StateFactory
-        {
-            get => _stateFactory;
-        }
+        protected override StateFactory StateFactory => _stateFactory;
 
         public PlayerStateMachine(Type initialState, PlayerController context)
             : base()

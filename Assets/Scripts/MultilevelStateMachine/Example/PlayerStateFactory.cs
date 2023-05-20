@@ -13,10 +13,10 @@ namespace StateMachines.Multilevel.Example
 
         protected override void InitializeStates(StateMachine stateMachine, StateFactory stateFactory)
         {
-            States[typeof(GroundedState)] = new GroundedState(stateMachine, stateFactory, _context);
-            States[typeof(MidairState)] = new MidairState(stateMachine, stateFactory, _context);
-            States[typeof(IdleState)] = new IdleState(stateMachine, stateFactory, _context);
-            States[typeof(WalkState)] = new WalkState(stateMachine, stateFactory, _context);
+            _states[typeof(GroundedState)] = new GroundedState(stateMachine, stateFactory, _context);
+            _states[typeof(MidairState)] = new MidairState(stateMachine, stateFactory, _context);
+            _states[typeof(IdleState)] = new IdleState(stateMachine, stateFactory, _context);
+            _states[typeof(WalkState)] = new WalkState(stateMachine, stateFactory, _context);
         }
     }
 }

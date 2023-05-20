@@ -11,7 +11,7 @@ namespace StateMachines.Multilevel
         private StateMachine _stateMachine;
         private StateFactory _stateFactory;
 
-        protected Dictionary<Type, State> _states { get => _stateFactory.States; }
+        protected IReadOnlyDictionary<Type, State> _states => _stateFactory.States;
 
         public State(StateMachine stateMachine, StateFactory stateFactory)
         {
