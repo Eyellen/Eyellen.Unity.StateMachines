@@ -14,7 +14,7 @@ namespace StateMachines.Multilevel.Debugging
         private MonoBehaviour _script;
 
         [SerializeField]
-        private Rect _windowRect = new Rect(10, 10, 300, 400);
+        private Rect _windowRect = new Rect(new Vector2(5, 5), new Vector2(150, 0));
 
         private StateMachine _stateMachine;
 

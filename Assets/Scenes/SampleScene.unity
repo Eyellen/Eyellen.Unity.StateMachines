@@ -701,11 +701,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44984b0fc3791a249ba49928ed13269f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useNamespacesInStateNames: 0
+  _useNamespacesInStateNames: 1
   _script: {fileID: 1799039731}
   _windowRect:
     serializedVersion: 2
-    x: 10
-    y: 10
-    width: 300
-    height: 400
+    x: 5
+    y: 5
+    width: 150
+    height: 0
