@@ -7,6 +7,9 @@ namespace StateMachines.Multilevel.Debugging
     public class StateMachineDebugger : MonoBehaviour
     {
         [SerializeField]
+        private bool _useNamespacesInStateNames = true;
+
+        [SerializeField]
         [Tooltip("This must be script that contains state machine.")]
         private MonoBehaviour _script;
 
@@ -68,12 +71,22 @@ namespace StateMachines.Multilevel.Debugging
             field = typeof(State).GetField("_currentSubState", (BindingFlags)(-1));
             while (state != null)
             {
-                GUILayout.Box(state.ToString(), GUILayout.ExpandWidth(true));
+                GUILayout.Box(GetStateName(state), GUILayout.ExpandWidth(true));
 
                 state = (State)field.GetValue(state);
             }
 
             GUILayout.EndVertical();
+        }
+
+        private string GetStateName(State state)
+        {
+            string name = state.ToString();
+
+            if (_useNamespacesInStateNames)
+                return name;
+            else
+                return name.Substring(name.LastIndexOf('.') + 1);
         }
     }
 }
