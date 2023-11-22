@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace StateMachines.Multilevel.Example
+namespace Eyellen.HierarchicalStateMachine.Samples
 {
     public class MidairIdleState : PlayerState
     {

@@ -1,0 +1,16 @@
+{
+    "name": "Eyellen.HierarchicalStateMachine.Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3d1d2f1182a6cf242a6b5d4f2caed63d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

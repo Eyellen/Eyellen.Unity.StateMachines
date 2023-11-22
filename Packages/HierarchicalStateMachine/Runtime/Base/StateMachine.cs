@@ -1,6 +1,6 @@
 using System;
 
-namespace StateMachines.Multilevel
+namespace Eyellen.HierarchicalStateMachine
 {
     public abstract class StateMachine
     {

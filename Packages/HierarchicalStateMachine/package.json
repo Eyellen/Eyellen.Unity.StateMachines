@@ -1,0 +1,16 @@
+{
+  "name": "com.eyellen.hierarchical-state-machine",
+  "version": "1.0.0",
+  "displayName": "Hierarchical State Machine",
+  "description": "A useful implementation of hierarchical state machine.",
+  "unity": "2017.1",
+  "keywords": [
+    "state machine",
+    "state",
+    "pattern"
+  ],
+  "author": {
+    "name": "Eyellen",
+    "email": "eeyellen@gmail.com"
+  }
+}

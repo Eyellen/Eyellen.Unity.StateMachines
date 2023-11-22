@@ -1,6 +1,6 @@
 using System;
 
-namespace StateMachines.Multilevel.Example
+namespace Eyellen.HierarchicalStateMachine.Samples
 {
     public class PlayerStateMachine : StateMachine
     {

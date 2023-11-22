@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace StateMachines.Multilevel
+namespace Eyellen.HierarchicalStateMachine
 {
     public abstract class StateFactory
     {
