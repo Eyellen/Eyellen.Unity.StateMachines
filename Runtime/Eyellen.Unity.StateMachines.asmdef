@@ -1,6 +1,6 @@
 {
     "name": "Eyellen.Unity.StateMachines",
-    "rootNamespace": "",
+    "rootNamespace": "Eyellen.Unity.StateMachines",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
