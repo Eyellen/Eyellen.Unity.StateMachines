@@ -1,4 +1,6 @@
-namespace Eyellen.HierarchicalStateMachine.Samples
+using Eyellen.Unity.StateMachines.Hierarchical;
+
+namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
 {
     public class PlayerState : State
     {

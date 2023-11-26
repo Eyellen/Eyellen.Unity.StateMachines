@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Eyellen.HierarchicalStateMachine.Samples
+namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(CapsuleCollider))]

@@ -1,6 +1,7 @@
+using Eyellen.Unity.StateMachines.Hierarchical;
 using UnityEngine;
 
-namespace Eyellen.HierarchicalStateMachine.Samples
+namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
 {
     public class GroundedState : PlayerState
     {
