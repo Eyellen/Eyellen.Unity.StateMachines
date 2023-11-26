@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Eyellen.Unity.StateMachines.Simple
+{
+    public abstract class StateMachine<TStateEnum, TBaseState>
+        where TStateEnum : Enum
+        where TBaseState : State<TStateEnum>
+    {
+        private IReadOnlyDictionary<TStateEnum, TBaseState> _states;
+
+        public TStateEnum CurrentState { get; private set; }
+
+        public event Action<TStateEnum, TStateEnum> OnStateChanged;
+
+        public StateMachine(TStateEnum initialState)
+        {
+            _states = InitializeStates();
+
+            CurrentState = initialState;
+            _states[initialState].Enter();
+
+            OnStateChanged?.Invoke(default, initialState);
+        }
+
+        protected abstract Dictionary<TStateEnum, TBaseState> InitializeStates();
+
+        private void SwitchState(TStateEnum newState)
+        {
+            TStateEnum previousState = CurrentState;
+            _states[CurrentState].Exit();
+            CurrentState = newState;
+            _states[CurrentState].Enter();
+
+            OnStateChanged?.Invoke(previousState, CurrentState);
+        }
+
+        public void Update()
+        {
+            if (_states[CurrentState].CheckSwitchState(out TStateEnum state))
+                SwitchState(state);
+        }
+
+        public void LateUpdate() => _states[CurrentState].LateUpdate();
+
+        public void FixedUpdate() => _states[CurrentState].FixedUpdate();
+
+        public void OnCollisionEnter(Collision collision) => _states[CurrentState].OnCollisionEnter(collision);
+
+        public void OnCollisionExit(Collision collision) => _states[CurrentState].OnCollisionExit(collision);
+
+        public void OnCollisionStay(Collision collision) => _states[CurrentState].OnCollisionStay(collision);
+
+        public void OnTriggerEnter(Collider other) => _states[CurrentState].OnTriggerEnter(other);
+
+        public void OnTriggerExit(Collider other) => _states[CurrentState].OnTriggerExit(other);
+
+        public void OnTriggerStay(Collider other) => _states[CurrentState].OnTriggerStay(other);
+    }
+}
