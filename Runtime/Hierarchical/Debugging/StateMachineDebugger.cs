@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-namespace Eyellen.HierarchicalStateMachine.Debugging
+namespace Eyellen.Unity.StateMachines.Hierarchical.Debugging
 {
     public class StateMachineDebugger : MonoBehaviour
     {

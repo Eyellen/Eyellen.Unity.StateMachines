@@ -1,6 +1,6 @@
 using System;
 
-namespace Eyellen.HierarchicalStateMachine.Debugging
+namespace Eyellen.Unity.StateMachines.Hierarchical.Debugging
 {
     public class StateMachineNotFoundException : Exception
     {

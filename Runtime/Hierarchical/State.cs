@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Eyellen.HierarchicalStateMachine
+namespace Eyellen.Unity.StateMachines.Hierarchical
 {
     public abstract class State
     {

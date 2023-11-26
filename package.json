@@ -1,8 +1,8 @@
 {
-  "name": "com.eyellen.hierarchical-state-machine",
-  "displayName": "Hierarchical State Machine",
+  "name": "com.eyellen.unity.state-machines",
+  "displayName": "State Machines",
   "version": "1.0.0",
-  "description": "A useful implementation of hierarchical state machine.",
+  "description": "A useful implementation of simple and hierarchical state machine.",
   "keywords": [
     "state machine",
     "state",
@@ -13,7 +13,7 @@
     "email": "eeyellen@gmail.com"
   },
   "repository": {
-    "url": "https://github.com/Eyellen/HierarchicalStateMachine.git",
+    "url": "https://github.com/Eyellen/Eyellen.Unity.StateMachines",
     "type": "git"
   }
 }

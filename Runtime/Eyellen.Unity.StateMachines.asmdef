@@ -1,9 +1,7 @@
 {
-    "name": "Eyellen.HierarchicalStateMachine.Samples",
+    "name": "Eyellen.Unity.StateMachines",
     "rootNamespace": "",
-    "references": [
-        "GUID:3d1d2f1182a6cf242a6b5d4f2caed63d"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
