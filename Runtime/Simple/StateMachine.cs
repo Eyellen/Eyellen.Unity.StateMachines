@@ -14,9 +14,9 @@ namespace Eyellen.Unity.StateMachines.Simple
 
         public event Action<TStateEnum, TStateEnum> OnStateChanged;
 
-        public StateMachine(TStateEnum initialState)
+        public StateMachine(TStateEnum initialState, params object[] baseStateContructorParams)
         {
-            _states = InitializeStates();
+            _states = InitializeStates(baseStateContructorParams);
 
             CurrentState = initialState;
             _states[initialState].Enter();
@@ -24,7 +24,7 @@ namespace Eyellen.Unity.StateMachines.Simple
             OnStateChanged?.Invoke(default, initialState);
         }
 
-        protected abstract Dictionary<TStateEnum, TBaseState> InitializeStates();
+        protected abstract Dictionary<TStateEnum, TBaseState> InitializeStates(params object[] baseStateConstructorParams);
 
         private void SwitchState(TStateEnum newState)
         {
