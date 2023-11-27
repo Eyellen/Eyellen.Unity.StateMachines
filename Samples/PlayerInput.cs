@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
+namespace Eyellen.Unity.StateMachines.Samples
 {
     public class PlayerInput : MonoBehaviour
     {
