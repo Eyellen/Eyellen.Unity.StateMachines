@@ -6,28 +6,18 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
     {
         public WalkState(CharacterController context) : base(context) { }
 
-        public override bool CheckSwitchState(out State state)
+        public override State CheckSwitchState()
         {
             if (Mathf.Abs(_context.Input.MovementVector.magnitude) < 0.1)
-            {
-                state = State.Idle;
-                return true;
-            }
+                return State.Idle;
 
             if (_context.Input.IsSprinting)
-            {
-                state = State.Run;
-                return true;
-            }
+                return State.Run;
 
             if (_context.Input.IsJumpPressed)
-            {
-                state = State.Jump;
-                return true;
-            }
+                return State.Jump;
 
-            state = default;
-            return false;
+            return default;
         }
 
         public override void FixedUpdate()

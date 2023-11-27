@@ -4,16 +4,12 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
     {
         public MidairState(CharacterController context) : base(context) { }
 
-        public override bool CheckSwitchState(out State state)
+        public override State CheckSwitchState()
         {
             if (_context.IsGrounded())
-            {
-                state = State.Idle;
-                return true;
-            }
+                return State.Idle;
 
-            state = default;
-            return false;
+            return default;
         }
     }
 }

@@ -38,7 +38,10 @@ namespace Eyellen.Unity.StateMachines.Simple
 
         public void Update()
         {
-            if (_states[CurrentState].CheckSwitchState(out TStateEnum state))
+            _states[CurrentState].Update();
+
+            TStateEnum state = _states[CurrentState].CheckSwitchState();
+            if (!state.Equals(default(TStateEnum)))
                 SwitchState(state);
         }
 

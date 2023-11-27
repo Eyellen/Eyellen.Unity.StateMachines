@@ -10,22 +10,15 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
 
         public JumpState(CharacterController context) : base(context) { }
 
-        public override bool CheckSwitchState(out State state)
+        public override State CheckSwitchState()
         {
             if (!_context.IsGrounded())
-            {
-                state = State.Midair;
-                return true;
-            }
+                return State.Midair;
 
             if (_context.IsGrounded() && Time.time > _stateEnterTime + _maxStateResidenceTime)
-            {
-                state = State.Idle;
-                return true;
-            }
+                return State.Idle;
 
-            state = default;
-            return false;
+            return default;
         }
 
         public override void Enter()

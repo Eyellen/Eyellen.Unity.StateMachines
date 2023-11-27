@@ -6,22 +6,15 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
     {
         public IdleState(CharacterController context) : base(context) { }
 
-        public override bool CheckSwitchState(out State state)
+        public override State CheckSwitchState()
         {
             if (_context.Input.IsJumpPressed)
-            {
-                state = State.Jump;
-                return true;
-            }
+                return State.Jump;
 
             if (Mathf.Abs(_context.Input.MovementVector.magnitude) >= 0.1)
-            {
-                state = State.Walk;
-                return true;
-            }
+                return State.Walk;
 
-            state = default;
-            return false;
+            return default;
         }
 
         public override void Enter()

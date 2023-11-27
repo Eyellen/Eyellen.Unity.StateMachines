@@ -6,7 +6,7 @@ namespace Eyellen.Unity.StateMachines.Simple
     public abstract class State<TStateEnum>
         where TStateEnum : Enum
     {
-        public abstract bool CheckSwitchState(out TStateEnum state);
+        public abstract TStateEnum CheckSwitchState();
 
         public virtual void Enter() { }
 
