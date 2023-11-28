@@ -20,8 +20,6 @@ namespace Eyellen.Unity.StateMachines.Simple
 
             CurrentState = initialState;
             _states[initialState].Enter();
-
-            OnStateChanged?.Invoke(default, initialState);
         }
 
         protected abstract Dictionary<TStateEnum, TBaseState> InitializeStates(params object[] baseStateConstructorParams);
