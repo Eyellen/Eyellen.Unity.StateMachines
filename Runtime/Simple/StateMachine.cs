@@ -39,7 +39,7 @@ namespace Eyellen.Unity.StateMachines.Simple
             _states[CurrentState].Update();
 
             TStateEnum state = _states[CurrentState].CheckSwitchState();
-            if (!state.Equals(default(TStateEnum)))
+            if (!EqualityComparer<TStateEnum>.Default.Equals(state, default))
                 SwitchState(state);
         }
 
