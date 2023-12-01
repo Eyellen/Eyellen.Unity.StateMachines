@@ -26,6 +26,9 @@ namespace Eyellen.Unity.StateMachines.Simple
 
         private void SwitchState(TStateEnum newState)
         {
+            if (EqualityComparer<TStateEnum>.Default.Equals(newState, CurrentState))
+                return;
+
             TStateEnum previousState = CurrentState;
             _states[CurrentState].Exit();
             CurrentState = newState;
