@@ -15,5 +15,12 @@
   "repository": {
     "url": "https://github.com/Eyellen/Eyellen.Unity.StateMachines",
     "type": "git"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Character Sample",
+      "description": "State machine based character controller",
+      "path": "Samples~/CharacterSample"
+    }
+  ]
 }
