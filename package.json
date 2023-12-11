@@ -1,6 +1,6 @@
 {
   "name": "com.eyellen.unity.state-machines",
-  "displayName": "State Machines",
+  "displayName": "Eyellen.Unity.StateMachines",
   "version": "1.0.0",
   "description": "A useful implementation of simple and hierarchical state machine.",
   "keywords": [
