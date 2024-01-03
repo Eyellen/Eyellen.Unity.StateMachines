@@ -8,6 +8,9 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
 
         public override State CheckSwitchState()
         {
+            if (!_context.IsGrounded())
+                return State.Midair;
+
             if (_context.Input.IsJumpPressed)
                 return State.Jump;
 

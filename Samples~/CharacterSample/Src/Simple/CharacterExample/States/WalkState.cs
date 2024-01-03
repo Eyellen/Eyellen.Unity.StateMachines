@@ -8,6 +8,9 @@ namespace Eyellen.Unity.StateMachines.Samples.Simple
 
         public override State CheckSwitchState()
         {
+            if (!_context.IsGrounded())
+                return State.Midair;
+
             if (Mathf.Abs(_context.Input.MovementVector.magnitude) < 0.1)
                 return State.Idle;
 
