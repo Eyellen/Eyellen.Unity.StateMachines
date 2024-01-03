@@ -49,12 +49,11 @@ namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
         [field: SerializeField]
         public float MidairMovementSpeed { get; private set; } = 0.1f;
 
-        private int _isGroundedLayerMask;
+        [SerializeField]
+        private LayerMask _groundLayers;
 
         private void Awake()
         {
-            _isGroundedLayerMask = ~(1 << LayerMask.NameToLayer("Player"));
-
             Transform = transform;
             CapsuleCollider = GetComponent<CapsuleCollider>();
             Rigidbody = GetComponent<Rigidbody>();
@@ -78,7 +77,7 @@ namespace Eyellen.Unity.StateMachines.Samples.Hierarchical
             Vector3 position = Transform.position + (CapsuleCollider.center -
                 Vector3.up * (CapsuleCollider.height / 2 - CapsuleCollider.radius + _groundedSphereOffset));
 
-            return Physics.CheckSphere(position, CapsuleCollider.radius - _skinThickness, _isGroundedLayerMask);
+            return Physics.CheckSphere(position, CapsuleCollider.radius - _skinThickness, _groundLayers);
         }
 
 #if UNITY_EDITOR
