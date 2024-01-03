@@ -12,7 +12,9 @@ namespace Eyellen.Unity.StateMachines.Simple
 
         public TStateEnum CurrentState => _stateMachine.CurrentState;
 
-        public event Action<TStateEnum, TStateEnum> OnStateChanged;
+        public State<TStateEnum> CurrentStateInstance => _stateMachine.CurrentStateInstance;
+
+        public event Action<StateChangedEventArgs<TStateEnum>> OnStateChanged;
 
         protected virtual void Awake()
         {

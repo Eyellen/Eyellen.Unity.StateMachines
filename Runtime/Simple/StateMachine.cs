@@ -12,7 +12,9 @@ namespace Eyellen.Unity.StateMachines.Simple
 
         public TStateEnum CurrentState { get; private set; }
 
-        public event Action<TStateEnum, TStateEnum> OnStateChanged;
+        public State<TStateEnum> CurrentStateInstance => _states[CurrentState];
+
+        public event Action<StateChangedEventArgs<TStateEnum>> OnStateChanged;
 
         public StateMachine(TStateEnum initialState, params object[] baseStateContructorParams)
         {
@@ -34,7 +36,8 @@ namespace Eyellen.Unity.StateMachines.Simple
             CurrentState = newState;
             _states[CurrentState].Enter();
 
-            OnStateChanged?.Invoke(previousState, CurrentState);
+            OnStateChanged?.Invoke(
+                new StateChangedEventArgs<TStateEnum>(previousState, CurrentState, _states[previousState], _states[CurrentState]));
         }
 
         public void Update()
