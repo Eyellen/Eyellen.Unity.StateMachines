@@ -2,7 +2,7 @@
   "name": "com.eyellen.unity.state-machines",
   "displayName": "Eyellen.Unity.StateMachines",
   "version": "1.0.0",
-  "description": "A useful implementation of simple and hierarchical state machine.",
+  "description": "A useful implementation of simple state machine.",
   "keywords": [
     "state machine",
     "state",
